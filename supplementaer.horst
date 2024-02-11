@@ -1,0 +1,91 @@
+class Node {
+    init(value) {
+        this.value = value;
+        this.next = nil;
+    }
+}
+
+class ListIterator {
+    init(list) {
+        this.current = list.root;
+    }
+
+    next() {
+        let current = this.current;
+        if (current != nil) {
+            this.current = current.next;
+            return current.value;
+        }
+        return nil;
+    }
+
+    hasNext() {
+        return this.current != nil;
+    }
+}
+
+class List {
+    init() {
+        this.root = nil;
+    }
+
+    at(index) {
+        let current = this.root;
+        let i = 0;
+        while (current != nil) {
+            if (i == index) {
+                return current;
+            }
+            current = current.next;
+            i = i + 1;
+        }
+        return nil;
+    }
+
+    append(value) {
+        if (this.root == nil) {
+            this.root = Node(value);
+            return;
+        }
+
+        let current = this.root;
+        while (current.next != nil) {
+            current = current.next;
+        }
+        current.next = Node(value);
+    }
+
+    get(index) {
+        let node = this.at(index);
+        if (node != nil) {
+            return node.value;
+        }
+        return nil;
+    }
+
+    set(index, value) {
+        let node = this.at(index);
+        if (node != nil) {
+            node.value = value;
+        }
+    }
+
+    iterator() {
+        return ListIterator(this);
+    }
+
+    toString() {
+        if (this.root == nil) {
+            return "[]";
+        }
+
+        let current = this.root;
+        let string = "[";
+        while (current.next != nil) {
+            string = string + current.value + ", ";
+            current = current.next;
+        }
+        string = string + current.value + "]";
+        return string;
+    }
+}

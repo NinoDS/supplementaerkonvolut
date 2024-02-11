@@ -1,0 +1,16 @@
+// Exemplarische Anwendungsillustration
+
+import "supplementaer.horst" for List, Node, ListIterator;
+
+let list = List();
+list.append(1);
+list.append(2);
+print list; // [1, 2]
+
+for (let e in list) {
+    print e;
+}
+
+// Ausgabe:
+// 1
+// 2
