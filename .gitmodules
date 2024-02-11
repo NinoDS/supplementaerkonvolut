@@ -1,3 +1,4 @@
 [submodule "horst"]
 	path = horst
 	url = https://github.com/horst-lang/horst.git
+	branch = dev
