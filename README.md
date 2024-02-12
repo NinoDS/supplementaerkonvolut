@@ -3,7 +3,7 @@ Dieses Supplementärkonvolut dient als Erweiterung der Horst Bibliotheca Fundame
 
 ## Verwendung
 
-Das Importieren von Konvoluten in die aktuelle Namensdomäne in Horst ist wie folgt möglich:
+Das Importieren von Konvoluten in den aktuellen Namensraum ist in Horst wie folgt möglich:
 
 ```wren
 import "path/to/module.horst" for var1, var2;
